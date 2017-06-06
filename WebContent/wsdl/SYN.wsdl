@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com" xmlns:intf="http://com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="syn_course">
+    <complexType>
+     <sequence>
+      <element name="i" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="syn_courseResponse">
+    <complexType>
+     <sequence>
+      <element name="syn_courseReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="syn_courseResponse">
+
+      <wsdl:part element="impl:syn_courseResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="syn_courseRequest">
+
+      <wsdl:part element="impl:syn_course" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SYN">
+
+      <wsdl:operation name="syn_course">
+
+         <wsdl:input message="impl:syn_courseRequest" name="syn_courseRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:syn_courseResponse" name="syn_courseResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SYNSoapBinding" type="impl:SYN">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="syn_course">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="syn_courseRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="syn_courseResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SYNService">
+
+      <wsdl:port binding="impl:SYNSoapBinding" name="SYN">
+
+         <wsdlsoap:address location="http://localhost:8080/android_join/services/SYN"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

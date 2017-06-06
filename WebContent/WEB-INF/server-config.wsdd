@@ -1,0 +1,154 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="E:\Myeclipse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\android_join\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:service name="Login" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="join_login" qname="ns1:join_login" returnQName="ns1:join_loginReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:username" type="xsd:string"/>
+   <ns2:parameter qname="ns1:userpassword" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:parameter name="allowedMethods" value="join_login"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Login"/>
+  <ns1:parameter name="className" value="com.Login"/>
+  <ns1:parameter name="wsdlServicePort" value="Login"/>
+  <ns1:parameter name="schemaQualified" value="http://com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://com"/>
+  <ns1:parameter name="wsdlServiceElement" value="LoginService"/>
+ </ns1:service>
+ <ns1:service name="Course" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="course_add" qname="ns2:course_add" returnQName="ns2:course_addReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:coursename" type="xsd:string"/>
+   <ns1:parameter qname="ns2:courseteacher" type="xsd:string"/>
+   <ns1:parameter qname="ns2:coursedate" type="xsd:string"/>
+   <ns1:parameter qname="ns2:coursetime" type="xsd:string"/>
+   <ns1:parameter qname="ns2:courseplace" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="course_add"/>
+  <ns1:parameter name="wsdlPortType" value="Course"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://com"/>
+  <ns1:parameter name="wsdlServicePort" value="Course"/>
+  <ns1:parameter name="className" value="com.Course"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://com"/>
+  <ns1:parameter name="wsdlServiceElement" value="CourseService"/>
+ </ns1:service>
+ <ns1:service name="SYN" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="syn_course" qname="ns3:syn_course" returnQName="ns3:syn_courseReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:i" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="syn_course"/>
+  <ns1:parameter name="wsdlPortType" value="SYN"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://com"/>
+  <ns1:parameter name="wsdlServicePort" value="SYN"/>
+  <ns1:parameter name="className" value="com.SYN"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://com"/>
+  <ns1:parameter name="wsdlServiceElement" value="SYNService"/>
+ </ns1:service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="courseMessage" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="set_cname" qname="ns4:set_cname" soapAction="" xmlns:ns4="http://db">
+   <ns1:parameter qname="ns4:cname" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="set_time" qname="ns5:set_time" soapAction="" xmlns:ns5="http://db">
+   <ns1:parameter qname="ns5:time" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="set_place" qname="ns6:set_place" soapAction="" xmlns:ns6="http://db">
+   <ns1:parameter qname="ns6:place" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="set_date" qname="ns7:set_date" soapAction="" xmlns:ns7="http://db">
+   <ns1:parameter qname="ns7:date" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="set_teacher" qname="ns8:set_teacher" soapAction="" xmlns:ns8="http://db">
+   <ns1:parameter qname="ns8:teacher" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="get_cname" qname="ns9:get_cname" returnQName="ns9:get_cnameReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://db" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="get_teacher" qname="ns10:get_teacher" returnQName="ns10:get_teacherReturn" returnType="xsd:string" soapAction="" xmlns:ns10="http://db" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="get_place" qname="ns11:get_place" returnQName="ns11:get_placeReturn" returnType="xsd:string" soapAction="" xmlns:ns11="http://db" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="get_date" qname="ns12:get_date" returnQName="ns12:get_dateReturn" returnType="xsd:string" soapAction="" xmlns:ns12="http://db" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="get_time" qname="ns13:get_time" returnQName="ns13:get_timeReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://db" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="get_place get_date get_cname set_date get_time set_teacher set_place set_cname get_teacher set_time"/>
+  <ns1:parameter name="wsdlPortType" value="courseMessage"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://db"/>
+  <ns1:parameter name="wsdlServicePort" value="courseMessage"/>
+  <ns1:parameter name="className" value="db.courseMessage"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://db"/>
+  <ns1:parameter name="wsdlServiceElement" value="courseMessageService"/>
+ </ns1:service>
+ <ns1:service name="Register" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="join_register" qname="ns14:join_register" returnQName="ns14:join_registerReturn" returnType="xsd:string" soapAction="" xmlns:ns14="http://com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:sname" type="xsd:string"/>
+   <ns1:parameter qname="ns14:password" type="xsd:string"/>
+   <ns1:parameter qname="ns14:sno" type="xsd:string"/>
+   <ns1:parameter qname="ns14:school" type="xsd:string"/>
+   <ns1:parameter qname="ns14:telnumber" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="join_register"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Register"/>
+  <ns1:parameter name="className" value="com.Register"/>
+  <ns1:parameter name="wsdlServicePort" value="Register"/>
+  <ns1:parameter name="schemaQualified" value="http://com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://com"/>
+  <ns1:parameter name="wsdlServiceElement" value="RegisterService"/>
+ </ns1:service>
+ <ns1:service name="DBOpenHelper" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="connection_start" qname="ns15:connection_start" returnQName="ns15:connection_startReturn" returnType="xsd:anyType" soapAction="" xmlns:ns15="http://db" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="connection_start"/>
+  <ns1:parameter name="wsdlPortType" value="DBOpenHelper"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://db"/>
+  <ns1:parameter name="wsdlServicePort" value="DBOpenHelper"/>
+  <ns1:parameter name="className" value="db.DBOpenHelper"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://db"/>
+  <ns1:parameter name="wsdlServiceElement" value="DBOpenHelperService"/>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

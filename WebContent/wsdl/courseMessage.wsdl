@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://db" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://db" xmlns:intf="http://db" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://db" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="set_cname">
+    <complexType>
+     <sequence>
+      <element name="cname" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="set_cnameResponse">
+    <complexType/>
+   </element>
+   <element name="set_time">
+    <complexType>
+     <sequence>
+      <element name="time" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="set_timeResponse">
+    <complexType/>
+   </element>
+   <element name="set_place">
+    <complexType>
+     <sequence>
+      <element name="place" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="set_placeResponse">
+    <complexType/>
+   </element>
+   <element name="set_date">
+    <complexType>
+     <sequence>
+      <element name="date" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="set_dateResponse">
+    <complexType/>
+   </element>
+   <element name="set_teacher">
+    <complexType>
+     <sequence>
+      <element name="teacher" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="set_teacherResponse">
+    <complexType/>
+   </element>
+   <element name="get_cname">
+    <complexType/>
+   </element>
+   <element name="get_cnameResponse">
+    <complexType>
+     <sequence>
+      <element name="get_cnameReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="get_teacher">
+    <complexType/>
+   </element>
+   <element name="get_teacherResponse">
+    <complexType>
+     <sequence>
+      <element name="get_teacherReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="get_place">
+    <complexType/>
+   </element>
+   <element name="get_placeResponse">
+    <complexType>
+     <sequence>
+      <element name="get_placeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="get_date">
+    <complexType/>
+   </element>
+   <element name="get_dateResponse">
+    <complexType>
+     <sequence>
+      <element name="get_dateReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="get_time">
+    <complexType/>
+   </element>
+   <element name="get_timeResponse">
+    <complexType>
+     <sequence>
+      <element name="get_timeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="set_dateRequest">
+
+      <wsdl:part element="impl:set_date" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_dateResponse">
+
+      <wsdl:part element="impl:set_dateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_teacherRequest">
+
+      <wsdl:part element="impl:set_teacher" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_dateRequest">
+
+      <wsdl:part element="impl:get_date" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_teacherResponse">
+
+      <wsdl:part element="impl:set_teacherResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_teacherRequest">
+
+      <wsdl:part element="impl:get_teacher" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_timeResponse">
+
+      <wsdl:part element="impl:get_timeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_timeRequest">
+
+      <wsdl:part element="impl:get_time" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_placeResponse">
+
+      <wsdl:part element="impl:set_placeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_placeResponse">
+
+      <wsdl:part element="impl:get_placeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_placeRequest">
+
+      <wsdl:part element="impl:get_place" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_dateResponse">
+
+      <wsdl:part element="impl:get_dateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_timeResponse">
+
+      <wsdl:part element="impl:set_timeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_cnameRequest">
+
+      <wsdl:part element="impl:get_cname" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_teacherResponse">
+
+      <wsdl:part element="impl:get_teacherResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_timeRequest">
+
+      <wsdl:part element="impl:set_time" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="get_cnameResponse">
+
+      <wsdl:part element="impl:get_cnameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_cnameResponse">
+
+      <wsdl:part element="impl:set_cnameResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_placeRequest">
+
+      <wsdl:part element="impl:set_place" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="set_cnameRequest">
+
+      <wsdl:part element="impl:set_cname" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="courseMessage">
+
+      <wsdl:operation name="set_cname">
+
+         <wsdl:input message="impl:set_cnameRequest" name="set_cnameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:set_cnameResponse" name="set_cnameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_time">
+
+         <wsdl:input message="impl:set_timeRequest" name="set_timeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:set_timeResponse" name="set_timeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_place">
+
+         <wsdl:input message="impl:set_placeRequest" name="set_placeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:set_placeResponse" name="set_placeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_date">
+
+         <wsdl:input message="impl:set_dateRequest" name="set_dateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:set_dateResponse" name="set_dateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_teacher">
+
+         <wsdl:input message="impl:set_teacherRequest" name="set_teacherRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:set_teacherResponse" name="set_teacherResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_cname">
+
+         <wsdl:input message="impl:get_cnameRequest" name="get_cnameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:get_cnameResponse" name="get_cnameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_teacher">
+
+         <wsdl:input message="impl:get_teacherRequest" name="get_teacherRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:get_teacherResponse" name="get_teacherResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_place">
+
+         <wsdl:input message="impl:get_placeRequest" name="get_placeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:get_placeResponse" name="get_placeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_date">
+
+         <wsdl:input message="impl:get_dateRequest" name="get_dateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:get_dateResponse" name="get_dateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_time">
+
+         <wsdl:input message="impl:get_timeRequest" name="get_timeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:get_timeResponse" name="get_timeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="courseMessageSoapBinding" type="impl:courseMessage">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="set_cname">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="set_cnameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="set_cnameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_time">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="set_timeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="set_timeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_place">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="set_placeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="set_placeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_date">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="set_dateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="set_dateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="set_teacher">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="set_teacherRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="set_teacherResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_cname">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="get_cnameRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="get_cnameResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_teacher">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="get_teacherRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="get_teacherResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_place">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="get_placeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="get_placeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_date">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="get_dateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="get_dateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="get_time">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="get_timeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="get_timeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="courseMessageService">
+
+      <wsdl:port binding="impl:courseMessageSoapBinding" name="courseMessage">
+
+         <wsdlsoap:address location="http://localhost:8080/android_join/services/courseMessage"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

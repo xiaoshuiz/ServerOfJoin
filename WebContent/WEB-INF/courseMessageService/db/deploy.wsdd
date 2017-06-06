@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from courseMessageService WSDL service -->
+
+  <service name="courseMessage" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://db"/>
+      <parameter name="wsdlServiceElement" value="courseMessageService"/>
+      <parameter name="schemaQualified" value="http://db"/>
+      <parameter name="wsdlServicePort" value="courseMessage"/>
+      <parameter name="className" value="db.courseMessage"/>
+      <parameter name="wsdlPortType" value="courseMessage"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://db" name="set_cname" qname="operNS:set_cname" soapAction="">
+        <parameter xmlns:pns="http://db" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cname" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://db" name="set_time" qname="operNS:set_time" soapAction="">
+        <parameter xmlns:pns="http://db" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:time" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://db" name="set_place" qname="operNS:set_place" soapAction="">
+        <parameter xmlns:pns="http://db" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:place" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://db" name="set_date" qname="operNS:set_date" soapAction="">
+        <parameter xmlns:pns="http://db" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:date" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://db" name="set_teacher" qname="operNS:set_teacher" soapAction="">
+        <parameter xmlns:pns="http://db" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:teacher" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://db" xmlns:retNS="http://db" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="get_cname" qname="operNS:get_cname" returnQName="retNS:get_cnameReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://db" xmlns:retNS="http://db" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="get_teacher" qname="operNS:get_teacher" returnQName="retNS:get_teacherReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://db" xmlns:retNS="http://db" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="get_place" qname="operNS:get_place" returnQName="retNS:get_placeReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://db" xmlns:retNS="http://db" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="get_date" qname="operNS:get_date" returnQName="retNS:get_dateReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://db" xmlns:retNS="http://db" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="get_time" qname="operNS:get_time" returnQName="retNS:get_timeReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="get_place get_date get_cname set_date get_time set_teacher set_place set_cname get_teacher set_time"/>
+
+  </service>
+</deployment>

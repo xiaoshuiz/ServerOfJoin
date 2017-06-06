@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://db" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://db" xmlns:intf="http://db" xmlns:tns1="http://sql.java" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://db" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://sql.java"/>
+   <element name="connection_start">
+    <complexType/>
+   </element>
+   <element name="connection_startResponse">
+    <complexType>
+     <sequence>
+      <element name="connection_startReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="connection_startRequest">
+
+      <wsdl:part element="impl:connection_start" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="connection_startResponse">
+
+      <wsdl:part element="impl:connection_startResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DBOpenHelper">
+
+      <wsdl:operation name="connection_start">
+
+         <wsdl:input message="impl:connection_startRequest" name="connection_startRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:connection_startResponse" name="connection_startResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DBOpenHelperSoapBinding" type="impl:DBOpenHelper">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="connection_start">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="connection_startRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="connection_startResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DBOpenHelperService">
+
+      <wsdl:port binding="impl:DBOpenHelperSoapBinding" name="DBOpenHelper">
+
+         <wsdlsoap:address location="http://localhost:8080/android_join/services/DBOpenHelper"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
